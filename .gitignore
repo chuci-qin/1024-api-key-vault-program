@@ -1,30 +1,191 @@
-# Rust
-target/
+# 1024 API Key Vault Program - Git Ignore
+# Updated: 2025-11-17
+
+# ============================================================================
+# Rust / Cargo
+# ============================================================================
+
+# Build artifacts
+/target/
+**/target/
+debug/
+release/
+
+# Cargo lock file (keep for binary crates, ignore for library crates)
+# Cargo.lock
+
+# Cargo build artifacts
 **/*.rs.bk
 *.pdb
-Cargo.lock
 
-# IDEs
-.idea/
+# ============================================================================
+# Solana / Anchor
+# ============================================================================
+
+# Solana build artifacts
+.anchor/
+test-ledger/
+*.so
+deploy/
+
+# Program keypairs (IMPORTANT: Never commit private keys!)
+**/deploy-keypair.json
+**/program-keypair.json
+**/*-keypair.json
+**/*.json.bak
+
+# Test validator
+.validator/
+
+# ============================================================================
+# Node.js / JavaScript / TypeScript
+# ============================================================================
+
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Testing
+coverage/
+.nyc_output/
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# ============================================================================
+# Environment & Secrets
+# ============================================================================
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env*.local
+
+# Private keys and secrets (CRITICAL: Never commit!)
+*.pem
+*.key
+**/keys/
+**/keypairs/
+**/*-authority.json
+**/*-authority-*.json
+**/settlement-authority*.json
+
+# API keys
+api-keys.txt
+secrets.txt
+
+# ============================================================================
+# IDE / Editors
+# ============================================================================
+
+# VSCode
 .vscode/
+*.code-workspace
+
+# Cursor
+.cursor/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Vim
 *.swp
 *.swo
 *~
+
+# Emacs
+*~
+\#*\#
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# ============================================================================
+# OS
+# ============================================================================
+
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
 
-# Solana
-test-ledger/
-*.so
-*.keypair
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
 
+# Linux
+*~
+.directory
+
+# ============================================================================
 # Logs
+# ============================================================================
+
 *.log
+logs/
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Environment
-.env
-.env.local
+# ============================================================================
+# Temporary Files
+# ============================================================================
 
-# Build artifacts
-dist/
-build/
+tmp/
+temp/
+*.tmp
+*.temp
+*.cache
+.cache/
 
+# ============================================================================
+# Project Specific
+# ============================================================================
+
+# Deployment artifacts (optional, keep deployment info in docs)
+# deployment-*.txt
+# DEPLOYMENT_*.md
+
+# Test data
+test-data/
+**/test-accounts/
+
+# Backups
+*.bak
+*.backup
+*-backup.*
+
+# Generated documentation (keep committed docs, ignore auto-generated)
+# docs/api-auto/
+
+# ============================================================================
+# Security Notes
+# ============================================================================
+# 
+# IMPORTANT: The following should NEVER be committed:
+# - Private keys (*.pem, *-keypair.json)
+# - Environment variables with secrets (.env*)
+# - API keys and tokens
+# - Database credentials
+# - Settlement authority keys
+# 
+# Always double-check before committing!
+# ============================================================================

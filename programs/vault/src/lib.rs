@@ -26,9 +26,9 @@ pub mod processor;
 pub mod state;
 pub mod utils;
 
-// Vault Program ID（占位，部署后更新）
-// 部署后需要更新为实际的 Program ID
-solana_program::declare_id!("VAu1tProg1111111111111111111111111111111111");
+// Vault Program ID
+// 已部署到 1024Chain Testnet: 2025-11-17
+solana_program::declare_id!("9omyQr3wY5K5KyL53BQzLz9QTzAve6oYzg8LyfXFpsj8");
 
 // Program 入口点
 #[cfg(not(feature = "no-entrypoint"))]

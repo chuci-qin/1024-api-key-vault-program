@@ -234,9 +234,24 @@ cargo test-sbf test_create_vault
 
 ## 📝 Documentation
 
-- [Development Progress](docs/DEVELOPMENT_PROGRESS.md) - Current development status
-- [Design Document](docs/design.md) - Detailed technical design
-- [Draft Specification](docs/draft.md) - Initial design notes
+### 🚀 开始使用
+- [docs/README.md](docs/README.md) - **文档中心**（从这里开始）
+- [docs/DEPLOYMENT_GUIDE.md](docs/DEPLOYMENT_GUIDE.md) - **完整部署和使用指南**
+- [QUICKSTART.md](QUICKSTART.md) - 5分钟快速上手
+
+### 📖 设计和开发
+- [docs/design.md](docs/design.md) - 详细架构设计（753行）
+- [docs/draft.md](docs/draft.md) - 设计草稿和核心概念
+- [docs/DEVELOPMENT_PROGRESS.md](docs/DEVELOPMENT_PROGRESS.md) - 开发进度
+
+### 🔧 集成文档
+- [docs/INTEGRATION_GUIDE.md](docs/INTEGRATION_GUIDE.md) - **后端和前端集成指南**
+
+### 📊 项目状态
+- [CODE_AUDIT_REPORT.md](CODE_AUDIT_REPORT.md) - **代码审计报告**（98/100分）
+- [DEPLOYMENT_SUMMARY.md](DEPLOYMENT_SUMMARY.md) - 部署总结
+- [TEST_RESULTS.md](TEST_RESULTS.md) - 测试结果
+- [PROJECT_COMPLETE.md](PROJECT_COMPLETE.md) - **项目完成报告**
 
 ## 🤝 Contributing
 
@@ -254,12 +269,26 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guid
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## 🚀 Deployment Info
+
+### 1024Chain Testnet
+
+```
+Program ID:       9omyQr3wY5K5KyL53BQzLz9QTzAve6oYzg8LyfXFpsj8
+GlobalConfig PDA: 2a4x1w3RrGYNpZrn1pFZwqeGDm3rQQR4yP3J1NCukJXm  
+USDC Mint:        6u1x12yV2XFcEDGd8KByZZqnjipRiq9BJB2xKprhAipy
+RPC URL:          https://testnet-rpc.1024chain.com/rpc/
+Status:           ✅ Deployed & Initialized
+```
+
+**查看部署信息**: [FINAL_DEPLOYMENT_INFO.txt](FINAL_DEPLOYMENT_INFO.txt)
+
 ## 🔗 Links
 
 - **1024EX**: https://1024ex.com
 - **1024Chain**: https://1024chain.com
-- **Documentation**: https://docs.1024.com
-- **GitHub**: https://github.com/1024-org/1024-api-key-vault-program
+- **Testnet Explorer**: https://testnet-scan.1024chain.com/
+- **Documentation**: `docs/` 目录
 
 ## 💬 Support
 

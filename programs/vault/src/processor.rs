@@ -5,10 +5,12 @@ use solana_program::{
     account_info::{next_account_info, AccountInfo},
     entrypoint::ProgramResult,
     msg,
+    program::{invoke, invoke_signed},
     program_error::ProgramError,
     program_pack::Pack,
     pubkey::Pubkey,
     rent::Rent,
+    system_instruction,
     sysvar::{clock::Clock, Sysvar},
     system_program,
 };
@@ -205,25 +207,29 @@ fn process_create_vault(program_id: &Pubkey, accounts: &[AccountInfo]) -> Progra
     let usdc_bump = verify_pda(vault_usdc_info.key, program_id, usdc_seeds)?;
     let usdc_seeds_with_bump = &[b"vault-usdc".as_ref(), owner_info.key.as_ref(), &[usdc_bump]];
     
-    // 创建 Token Account
+    // 创建 Token Account (owner = Token Program, authority = vault-usdc PDA)
     let token_account_space = TokenAccount::LEN;
-    create_pda_account(
-        owner_info,
-        vault_usdc_info,
-        system_program_info,
-        program_id,
-        &rent,
-        token_account_space,
-        usdc_seeds_with_bump,
+    let create_account_ix = system_instruction::create_account(
+        owner_info.key,
+        vault_usdc_info.key,
+        rent.minimum_balance(token_account_space),
+        token_account_space as u64,
+        token_program_info.key, // owner 设为 Token Program
+    );
+    
+    invoke_signed(
+        &create_account_ix,
+        &[owner_info.clone(), vault_usdc_info.clone(), system_program_info.clone()],
+        &[usdc_seeds_with_bump],
     )?;
     
     // 初始化 Token Account
-    // Token Account 的 owner 设为 program_id，这样我们可以用 vault-usdc PDA 签名来转账
+    // Token Account 的 authority 设为 vault-usdc PDA 本身，这样我们可以用它签名来转账
     let init_account_ix = spl_token::instruction::initialize_account3(
         token_program_info.key,
         vault_usdc_info.key,
         usdc_mint_info.key,
-        program_id, // owner 是 program_id，允许任何 program 控制的 PDA 签名
+        vault_usdc_info.key, // authority 是 vault-usdc PDA 本身
     )?;
     
     solana_program::program::invoke_signed(

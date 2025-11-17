@@ -1,0 +1,25 @@
+{
+  "program_id": "9omyQr3wY5K5KyL53BQzLz9QTzAve6oYzg8LyfXFpsj8",
+  "global_config_pda": "2a4x1w3RrGYNpZrn1pFZwqeGDm3rQQR4yP3J1NCukJXm",
+  "usdc_mint": "6u1x12yV2XFcEDGd8KByZZqnjipRiq9BJB2xKprhAipy",
+  "rpc_url": "https://testnet-rpc.1024chain.com/rpc/",
+  "network": "1024chain-testnet",
+  "deployment_slot": 17432164,
+  "deployment_signature": "3ETimRsCErpS5FL1rhJeR9RZu8RRHB7t4Rb82LoPtS9VasDVmCCri2PyQkWmsX2GdzeJqFZkVRqGb3s7SkaCXQxV",
+  "init_signature": "5JCq828C62LQbTmWYoJRE1MMAuo6q74Jh3EoxcNt6Ju2jPUHafFPrc4x7Nc2ji3GbqeKvsKDohrUpSbC7jNDWSjY",
+  "test_accounts": {
+    "account1": {
+      "pubkey": "9ocm9zv5F2QghKaFSLGSjkVg6f8XZf54nVTjfC2M3dG4",
+      "secret": "65d7pAydmKwgo5mVBwnKQUS7BUP1ZBhisEbeRyfzFnGLez85AGSqcqbZCUbsccogzSyLBqYcoZVgU7x7AARtKMHz"
+    },
+    "account2": {
+      "pubkey": "G23icA8QJiAM2UwENf1112rGFxoqHP6JJa3TuwVseVxu",
+      "secret": "2Rc3q4XFhUeZE5LUQCCzuMDVy4iom7mevWgCFCeMobNWAymrNAGe8UEXKkfVJQHb4af4F81JJL86qQz16a1wnv4y"
+    },
+    "account3": {
+      "pubkey": "9S55H6Bbh2JCqdmQGcw2MWCdWeBNNQYb9GWiCHL62CUH",
+      "secret": "5isgvaK7oNcxNEctu6hRyYf7z1xEavfMRKmNGb6h9Ect2iFXtA9qKCFhWFhvxSzPJQBBMePuQ5Sd4VUYEKtd3oaq"
+    }
+  }
+}
+
